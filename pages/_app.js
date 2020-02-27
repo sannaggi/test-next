@@ -1,6 +1,4 @@
-import '../styles/style.css'
-
-console.log("dudu")
+import '../scss/style.scss'
 
 function MyApp({ Component, pageProps }) {
     return <Component {...pageProps} />
