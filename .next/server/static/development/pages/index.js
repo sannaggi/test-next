@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navbar */ "./comps/Navbar.js");
-var _jsxFileName = "C:\\Users\\Xyon\\Desktop\\test-next\\comps\\Layout.js";
+var _jsxFileName = "D:\\Personal Projects\\test-next\\comps\\Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -141,7 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\Xyon\\Desktop\\test-next\\comps\\Navbar.js";
+var _jsxFileName = "D:\\Personal Projects\\test-next\\comps\\Navbar.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1924,9 +1924,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _zeit_swr__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_zeit_swr__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "C:\\Users\\Xyon\\Desktop\\test-next\\pages\\index.js";
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+var _jsxFileName = "D:\\Personal Projects\\test-next\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1939,7 +1942,7 @@ function fetcher(url) {
 const PostLink = props => __jsx("li", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11
+    lineNumber: 12
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1947,62 +1950,83 @@ const PostLink = props => __jsx("li", {
   as: `/${props.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 12
+    lineNumber: 13
   },
   __self: undefined
 }, __jsx("a", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 13
+    lineNumber: 14
   },
   __self: undefined
 }, props.id)));
 
 const Index = () => {
   const {
+    query
+  } = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])();
+  const {
     data,
     error
-  } = _zeit_swr__WEBPACK_IMPORTED_MODULE_3___default()('/api/randomQuote', fetcher);
+  } = _zeit_swr__WEBPACK_IMPORTED_MODULE_3___default()(`/api/randomQuote${query.extra ? '?extra=' + query.extra : ''}`, fetcher);
   const author = data === null || data === void 0 ? void 0 : data.author;
   let quote = data === null || data === void 0 ? void 0 : data.quote;
+  let extras = data === null || data === void 0 ? void 0 : data.extra;
   if (!data) quote = 'Loading...';
   if (error) quote = 'Failed to fetch data';
+
+  if (!extras) {
+    extras = 'No extra';
+  }
+
   return __jsx(_comps_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 39
     },
     __self: undefined
   }, quote), author && __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 40
     },
     __self: undefined
-  }, author), __jsx("ul", {
+  }, author), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 41
+    },
+    __self: undefined
+  }), __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, extras), __jsx("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
     },
     __self: undefined
   }, __jsx(PostLink, {
     id: "sad",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 44
     },
     __self: undefined
   }), __jsx(PostLink, {
     id: "dudu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 45
     },
     __self: undefined
   })));
@@ -2012,14 +2036,14 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Xyon\Desktop\test-next\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! D:\Personal Projects\test-next\pages\index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -2098,6 +2122,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-unfetch");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
